@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- details  -->
+    <title>Bhaskar Melkani | Portfolio</title>
+    <link href="./styles/style.css" rel="stylesheet" />
+    <meta name="description" content="Portfolio | Bhaskar Melkani" />
+    <link rel="icon" type="image/png" href="./assets/favicon.png" />
+    <!--quick sand font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- fontawesome-->
+    <script
+      src="https://kit.fontawesome.com/2e8feb8b24.js"
+      crossorigin="anonymous"
+    ></script>
+    <!--scroll-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+  </head>
+  <body class="m-0 p-0 bg-black text-white font-quicksand">
+    <!-- particles background -->
+
+    <div id="particles-js" class="fixed inset-0 z-[-1]"></div>
+
+    <!-- main Div -->
+
+    <div
+      class="relative z-10 flex items-start flex-col h-screen sm:pl-48 sm:pr-48"
+    >
+      <!-- Nav BAr-->
+
+      <nav
+        class="flex items-center justify-between w-full right-0 px-5 sm:px-40 py-6 fixed z-50"
+      >
+        <!-- Logo -->
+        <a href="#home" class="flex-shrink-0">
+          <img src="./assets/logo.png" alt="Bhaskar Melkani" class="h-10" />
+        </a>
+
+        <!-- Nav items -->
+
+        <ul class="hidden sm:flex flex-row gap-x-8 text-white">
+          <li
+            class="hover:underline decoration-red-600 decoration-2 underline-offset-4"
+          >
+            <a href="#home" class="relative"> Home </a>
+          </li>
+          <li
+            class="hover:underline decoration-red-600 decoration-2 underline-offset-4"
+          >
+            <a href="#about" class="relative"> About </a>
+          </li>
+          <li
+            class="hover:underline decoration-red-600 decoration-2 underline-offset-4"
+          >
+            <a href="#skills" class="relative"> Skills </a>
+          </li>
+          <li
+            class="hover:underline decoration-red-600 decoration-2 underline-offset-4"
+          >
+            <a href="#projects" class="relative"> Projects </a>
+          </li>
+          <li
+            class="hover:underline decoration-red-600 decoration-2 underline-offset-4"
+          >
+            <a href="#contact" class="relative"> Contact </a>
+          </li>
+        </ul>
+
+        <!-- nav toggle button-->
+
+        <a onclick="navToggle()" class="sm:hidden text-2xl"
+          ><i class="fa-solid fa-bars"></i
+        ></a>
+
+        <!-- Mobile Menu -->
+
+        <ul
+          id="mobile-menu"
+          class="hidden sm:hidden flex flex-col gap-y-4 text-white bg-black bg-opacity-90 p-6 fixed top-16 right-5 left-5 rounded-md shadow-lg z-50"
+        >
+          <li
+            class="hover:underline decoration-red-600 decoration-2 underline-offset-4"
+          >
+            <a href="#home" class="relative">Home</a>
+          </li>
+          <li
+            class="hover:underline decoration-red-600 decoration-2 underline-offset-4"
+          >
+            <a href="#about" class="relative">About</a>
+          </li>
+          <li
+            class="hover:underline decoration-red-600 decoration-2 underline-offset-4"
+          >
+            <a href="#skills" class="relative">Skills</a>
+          </li>
+          <li
+            class="hover:underline decoration-red-600 decoration-2 underline-offset-4"
+          >
+            <a href="#projects" class="relative">Projects</a>
+          </li>
+          <li
+            class="hover:underline decoration-red-600 decoration-2 underline-offset-4"
+          >
+            <a href="#contact" class="relative">Contact</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Home Section -->
+
+      <div
+        id="home"
+        class="flex justify-between w-full sm:flex-row flex-col mt-16 items-center content-center text-center scroll-mt-16"
+      >
+        <div class="flex flex-col mt-10">
+          <h1 class="text-6xl font-bold font-sans">Bhaskar Melkani</h1>
+          <h3 class="text-red-600 text-4xl font-bold mt-4">
+            Student | Web Developer
+          </h3>
+          <div class="font-normal text-white text-3xl mt-10">
+            <a class="m-3" href="https://github.com/NOTBOOSTER"
+              ><i class="fa-brands fa-github"></i
+            ></a>
+            <a
+              class="m-3"
+              href="https://www.linkedin.com/in/bhaskar-melkani-2b44262a3"
+              ><i class="fa-brands fa-linkedin"></i
+            ></a>
+            <a class="m-3" href="https://discord.gg/9SGWpnx6st"
+              ><i class="fa-brands fa-discord"></i
+            ></a>
+          </div>
+        </div>
+        <div
+          class="sm:w-96 w-80 mt-16 rounded-xl overflow-hidden shadow-[0_4px_8px_rgba(255,255,255,0.1),0_12px_24px_rgba(255,255,255,0.1)] bg-black transform hover:translate-y-[-4px] transition duration-300"
+        >
+          <img class="w-full h-auto" src="./assets/image.jpg" />
+        </div>
+      </div>
+
+      <!-- About -->
+      <div class="text-center my-8 w-full sm:mt-10">
+        <h2
+          id="about"
+          class="text-3xl font-bold text-white mb-6 hover:underline decoration-red-600 decoration-2 underline-offset-4 scroll-mt-48"
+        >
+          About
+        </h2>
+
+        <div class="flex flex-col sm:flex-row justify-between items-center">
+          <!--about text-->
+          <div class="mt-6 sm:w-1/2">
+            <h1 class="text-4xl text-left font-bold font-sans pl-3">
+              Hello, i'm
+              <span class="text-red-600 text-4xl text-left font-bold font-sans"
+                >Bhaskar Melkani</span
+              >
+            </h1>
+            <p class="text-left font-bold pt-6 pl-3 text-xl">
+              I’m a passionate student currently diving deep into the world of
+              web development. I have a strong love for coding and a constant
+              drive to explore new technologies and methodologies. I’m always
+              eager to learn more and take on new challenges that help me grow
+              as a developer. Every project I work on is an opportunity to
+              innovate and expand my knowledge, and I’m excited about where this
+              path will take me.
+            </p>
+          </div>
+          <!--about pic-->
+          <img
+            class="mt-10 w-72 sm:mr-10 object-cover shadow-lg transform hover:scale-110 transition duration-300"
+            src="./assets/about.png"
+            alt="about"
+          />
+        </div>
+      </div>
+
+      <!-- Skills -->
+
+      <div class="text-center my-8 w-full sm:mt-16 mt-12">
+        <h2
+          id="skills"
+          class="text-3xl font-bold text-white mb-6 hover:underline decoration-red-600 decoration-2 underline-offset-4 scroll-mt-48"
+        >
+          Skills
+        </h2>
+        <div class="flex flex-wrap justify-center gap-4 p-4">
+          <!-- Skill 1: HTML -->
+          <div
+            class="flex items-center justify-center p-4 bg-gray-800 hover:bg-gray-700 rounded-lg shadow-lg transition-all duration-300"
+          >
+            <img
+              src="./assets/icons/html-icon.png"
+              alt="HTML"
+              class="h-10 w-10"
+            />
+          </div>
+          <!-- Skill 2: CSS -->
+          <div
+            class="flex items-center justify-center p-4 bg-gray-800 hover:bg-gray-700 rounded-lg shadow-lg transition-all duration-300"
+          >
+            <img
+              src="./assets/icons/css-icon.png"
+              alt="CSS"
+              class="h-10 w-10"
+            />
+          </div>
+          <!-- Skill 3: JavaScript -->
+          <div
+            class="flex items-center justify-center p-4 bg-gray-800 hover:bg-gray-700 rounded-lg shadow-lg transition-all duration-300"
+          >
+            <img
+              src="./assets/icons/js-icon.png"
+              alt="JavaScript"
+              class="h-10 w-10"
+            />
+          </div>
+          <!-- Skill 4: Node.js -->
+          <div
+            class="flex items-center justify-center p-4 bg-gray-800 hover:bg-gray-700 rounded-lg shadow-lg transition-all duration-300"
+          >
+            <img
+              src="./assets/icons/node-icon.png"
+              alt="Node.js"
+              class="h-10 w-10"
+            />
+          </div>
+          <!-- Skill 5: React -->
+          <div
+            class="flex items-center justify-center p-4 bg-gray-800 hover:bg-gray-700 rounded-lg shadow-lg transition-all duration-300"
+          >
+            <img
+              src="./assets/icons/react-icon.png"
+              alt="React"
+              class="h-10 w-10"
+            />
+          </div>
+          <!-- Skill 6: Tailwind CSS -->
+          <div
+            class="flex items-center justify-center p-4 bg-gray-800 hover:bg-gray-700 rounded-lg shadow-lg transition-all duration-300"
+          >
+            <img
+              src="./assets/icons/tailwind-icon.png"
+              alt="Tailwind CSS"
+              class="h-10 w-10"
+            />
+          </div>
+          <!-- Skill 7: Bootstrap -->
+          <div
+            class="flex items-center justify-center p-4 bg-gray-800 hover:bg-gray-700 rounded-lg shadow-lg transition-all duration-300"
+          >
+            <img
+              src="./assets/icons/bootstrap-icon.png"
+              alt="Bootstrap"
+              class="h-10 w-10"
+            />
+          </div>
+          <!-- Skill 8: GitHub -->
+          <div
+            class="flex items-center justify-center p-4 bg-gray-800 hover:bg-gray-700 rounded-lg shadow-lg transition-all duration-300"
+          >
+            <img
+              src="./assets/icons/github-icon.png"
+              alt="GitHub"
+              class="h-10 w-10"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Projects -->
+      <div class="text-center w-full sm:mt-20 mt-12">
+        <h2
+          id="projects"
+          class="text-3xl font-bold text-white mb-6 hover:underline decoration-red-600 decoration-2 underline-offset-4 scroll-mt-48"
+        >
+          Projects
+        </h2>
+        <div class="flex flex-wrap justify-center gap-4 p-4">
+          <!-- Project 1: Portfolio Website -->
+          <div
+            class="flex flex-col items-center min-w-96 justify-center p-4 bg-gray-800 hover:bg-gray-700 rounded-lg shadow-lg transition-all duration-300"
+          >
+            <a
+              href="http://"
+              class="text-3xl mb-5 text-red-600 font-bold hover:underline"
+              >Portfolio</a
+            >
+            <img
+              src="./assets/projects/portfolio.png"
+              alt="Portfolio Website"
+              class="rounded-xl overflow-hidden border-gray-400 border-2"
+            />
+          </div>
+          <!-- Project 2: stray nodes-->
+          <div
+            class="flex flex-col items-center min-w-96 justify-center p-4 bg-gray-800 hover:bg-gray-700 rounded-lg shadow-lg transition-all duration-300"
+          >
+            <a
+              href="http://"
+              class="text-3xl mb-5 text-red-600 font-bold hover:underline"
+              >Straynodes</a
+            >
+            <img
+              src="./assets/projects/straynodes.png"
+              alt="Portfolio Website"
+              class="rounded-xl overflow-hidden border-gray-400 border-2"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact -->
+      <div
+        class="w-full flex justify-center items-center text-white flex-col mt-16 sm:mt-16"
+      >
+        <h2
+          id="contact"
+          class="text-3xl font-bold text-white mb-3 hover:underline decoration-red-600 decoration-2 underline-offset-4 scroll-mt-48"
+        >
+          Contact
+        </h2>
+        <form class="w-full max-w-lg p-6 rounded-lg shadow-lg">
+          <!-- Name Input -->
+          <div class="mb-4">
+            <label for="name" class="block text-sm font-medium text-gray-300"
+              >Name</label
+            >
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              class="w-full px-3 py-2 text-black bg-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-red-600"
+            />
+          </div>
+          <!-- Email Input -->
+          <div class="mb-4">
+            <label for="email" class="block text-sm font-medium text-gray-300"
+              >Email</label
+            >
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              class="w-full px-3 py-2 text-black bg-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-red-600"
+            />
+          </div>
+          <!-- Message Input -->
+          <div class="mb-6">
+            <label for="message" class="block text-sm font-medium text-gray-300"
+              >Message</label
+            >
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              required
+              class="w-full px-3 py-2 text-black bg-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-red-600"
+            ></textarea>
+          </div>
+          <!-- Send Button -->
+          <div class="text-center">
+            <button
+              type="submit"
+              class="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-opacity-50 transition-all duration-300 font-bold"
+            >
+              Send
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!--End Page-->
+      <div class="w-full">
+        <div
+          class="flex justify-center flex-col items-center text-white text-center"
+        >
+          <div
+            class="flex justify-between items-center w-full sm:flex-row flex-col mb-8"
+          >
+            <a href="#home" class="flex-shrink-0">
+              <img src="./assets/logo.png" alt="Bhaskar Melkani" class="h-10" />
+            </a>
+            <div class="mt-8">
+              <h2 class="font-bold">DETAILS</h2>
+              <ul class="sm:text-start mt-4">
+                <li><a>Bhaskar Melkani</a></li>
+                <li>
+                  <a href="mailto:bhanuphadi@gmail.com">bhanuphadi@gmail.com</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <p class="text-sm mb-10">
+            © 2024 |
+            <a
+              href="https://github.com/NOTBOOSTER"
+              class="hover:underline text-blue-400"
+              >Bhaskar (NOTBOOSTER)</a
+            >
+            | All rights reserved.
+          </p>
+        </div>
+      </div>
+
+      <div class="w-full"></div>
+      <!--end-->
+    </div>
+    <!--Scripts-->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="./js/Particles.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
