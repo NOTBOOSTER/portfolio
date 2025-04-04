@@ -24,6 +24,19 @@ function navToggle() {
     }
   });
 
+  // Cancel rightxlick menu
+  document.addEventListener('contextmenu', (event) => {
+    event.preventDefault();
+    const menu = document.getElementById('mobile-menu');
+    if (!menu.classList.contains('hidden')) {
+      menu.classList.add('animate__fadeOutUp');
+      setTimeout(() => {
+        menu.classList.remove('animate__animated', 'animate__fadeOutUp');
+        menu.classList.add('hidden');
+      }, 300);
+    }
+  });
+
   // Close
   document.querySelectorAll('#mobile-menu li a').forEach(item => {
     item.addEventListener('click', () => {
