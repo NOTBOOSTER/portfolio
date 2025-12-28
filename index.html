@@ -3,714 +3,749 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- details  -->
     <title>Bhaskar Melkani | Portfolio</title>
-    <link href="./styles/style.css" rel="stylesheet" />
     <meta name="description" content="Portfolio | Bhaskar Melkani" />
-    <link rel="icon" type="image/png" href="./assets/favicon.png" />
-    <!--quick sand font-->
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <!-- fontawesome-->
+    <link href="styles/style.css" rel="stylesheet" />
+
+    <!-- FontAwesome -->
     <script
       src="https://kit.fontawesome.com/2e8feb8b24.js"
       crossorigin="anonymous"
     ></script>
-    <!--scroll-->
+
+    <!-- Animate.css -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
   </head>
-  <body class="m-0 p-0 bg-black text-white font-quicksand">
-    <!-- particles background -->
+  <body class="m-0 p-0 bg-black text-gray-200 overflow-x-hidden">
+    <!-- Particles Background -->
+    <div id="particles-js" class="fixed inset-0 z-0"></div>
 
-    <div id="particles-js" class="fixed inset-0 z-[-1]"></div>
-
-    <!-- main Div -->
-
-    <div
-      class="relative z-10 flex items-start flex-col h-screen max-w-screen-lg m-auto"
-    >
-      <!-- Nav BAr-->
-
+    <!-- Main Container -->
+    <div class="relative z-10 flex flex-col min-h-screen">
+      <!-- Navbar -->
       <nav
-        class="flex items-center justify-between w-full right-0 px-5 sm:px-40 py-6 fixed z-50"
+        class="fixed w-full top-0 z-50 glass-nav transition-all duration-300"
       >
-        <!-- Logo -->
-        <a href="#home" class="flex-shrink-0">
-          <img src="./assets/logo.png" alt="Bhaskar Melkani" class="h-10" />
-        </a>
+        <div
+          class="max-w-screen-xl mx-auto px-6 py-4 flex justify-between items-center"
+        >
+          <!-- Logo -->
+          <a href="#home" class="flex items-center gap-2 group">
+            <img src="./assets/logo.png" alt="Bhaskar Melkani" class="h-10" />
+          </a>
 
-        <!-- Nav items -->
-
-        <ul class="hidden sm:flex flex-row gap-x-8 text-white">
-          <li
-            class="hover:underline decoration-red-600 decoration-2 underline-offset-4"
+          <!-- Desktop Menu -->
+          <ul
+            class="hidden md:flex flex-row gap-x-8 text-sm font-semibold uppercase tracking-wider"
           >
-            <a href="#home" class="relative"> Home </a>
-          </li>
-          <li
-            class="hover:underline decoration-red-600 decoration-2 underline-offset-4"
-          >
-            <a href="#about" class="relative"> About </a>
-          </li>
-          <li
-            class="hover:underline decoration-red-600 decoration-2 underline-offset-4"
-          >
-            <a href="#skills" class="relative"> Skills </a>
-          </li>
-          <li
-            class="hover:underline decoration-red-600 decoration-2 underline-offset-4"
-          >
-            <a href="#projects" class="relative"> Projects </a>
-          </li>
-          <li
-            class="hover:underline decoration-red-600 decoration-2 underline-offset-4"
-          >
-            <a href="#contact" class="relative"> Contact </a>
-          </li>
-        </ul>
+            <li>
+              <a href="#home" class="hover:text-red-500 transition-colors"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a href="#about" class="hover:text-red-500 transition-colors"
+                >About</a
+              >
+            </li>
+            <li>
+              <a href="#skills" class="hover:text-red-500 transition-colors"
+                >Skills</a
+              >
+            </li>
+            <li>
+              <a href="#experience" class="hover:text-red-500 transition-colors"
+                >Experience</a
+              >
+            </li>
+            <li>
+              <a href="#projects" class="hover:text-red-500 transition-colors"
+                >Projects</a
+              >
+            </li>
+            <li>
+              <a href="#contact" class="hover:text-red-500 transition-colors"
+                >Contact</a
+              >
+            </li>
+          </ul>
 
-        <!-- nav toggle button-->
+          <!-- Mobile Toggle -->
+          <button
+            onclick="navToggle()"
+            class="md:hidden text-2xl text-white hover:text-red-500 focus:outline-none"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
 
-        <h1 onclick="navToggle()" class="sm:hidden text-2xl"
-          ><i class="fa-solid fa-bars"></i
-        ></h1>
-
-        <!-- Mobile Menu -->
-
+        <!-- Mobile Menu Dropdown -->
         <ul
           id="mobile-menu"
-          class="hidden sm:hidden flex flex-col gap-y-4 text-white bg-black bg-opacity-90 p-6 fixed top-16 right-5 left-5 rounded-md shadow-lg z-50"
+          class="hidden md:hidden flex flex-col bg-black/95 backdrop-blur-xl border-t border-gray-800 absolute w-full left-0"
         >
-          <li
-            class="hover:underline decoration-red-600 decoration-2 underline-offset-4"
-          >
-            <a href="#home" class="relative">Home</a>
+          <li class="border-b border-gray-800">
+            <a
+              href="#home"
+              class="block py-4 text-center hover:bg-gray-900 hover:text-red-500"
+              onclick="navToggle()"
+              >Home</a
+            >
           </li>
-          <li
-            class="hover:underline decoration-red-600 decoration-2 underline-offset-4"
-          >
-            <a href="#about" class="relative">About</a>
+          <li class="border-b border-gray-800">
+            <a
+              href="#about"
+              class="block py-4 text-center hover:bg-gray-900 hover:text-red-500"
+              onclick="navToggle()"
+              >About</a
+            >
           </li>
-          <li
-            class="hover:underline decoration-red-600 decoration-2 underline-offset-4"
-          >
-            <a href="#skills" class="relative">Skills</a>
+          <li class="border-b border-gray-800">
+            <a
+              href="#skills"
+              class="block py-4 text-center hover:bg-gray-900 hover:text-red-500"
+              onclick="navToggle()"
+              >Skills</a
+            >
           </li>
-          <li
-            class="hover:underline decoration-red-600 decoration-2 underline-offset-4"
-          >
-            <a href="#projects" class="relative">Projects</a>
+          <li class="border-b border-gray-800">
+            <a
+              href="#experience"
+              class="block py-4 text-center hover:bg-gray-900 hover:text-red-500"
+              onclick="navToggle()"
+              >Experience</a
+            >
           </li>
-          <li
-            class="hover:underline decoration-red-600 decoration-2 underline-offset-4"
-          >
-            <a href="#contact" class="relative">Contact</a>
+          <li class="border-b border-gray-800">
+            <a
+              href="#projects"
+              class="block py-4 text-center hover:bg-gray-900 hover:text-red-500"
+              onclick="navToggle()"
+              >Projects</a
+            >
+          </li>
+          <li>
+            <a
+              href="#contact"
+              class="block py-4 text-center hover:bg-gray-900 hover:text-red-500"
+              onclick="navToggle()"
+              >Contact</a
+            >
           </li>
         </ul>
       </nav>
 
-      <!-- Home Section -->
-
-      <div
-        id="home"
-        class="flex justify-between w-full sm:flex-row flex-col mt-16 items-center content-center text-center scroll-mt-16"
-      >
-        <div class="flex flex-col mt-10">
-          <h1 class="text-6xl font-bold font-sans">Bhaskar Melkani</h1>
-          <h3 class="text-red-600 text-4xl font-bold mt-4">
-            Student | Web Developer
-          </h3>
-          <div class="font-normal text-white text-3xl mt-10 rounded-full">
-            <a class="m-3" href="https://github.com/NOTBOOSTER"
-              ><i class="fa-brands fa-github"></i
-            ></a>
-            <a
-              class="m-3"
-              href="https://www.linkedin.com/in/bhaskar-melkani/"
-              ><i class="fa-brands fa-linkedin"></i
-            ></a>
-            <a class="m-3" href="https://discord.gg/9SGWpnx6st"
-              ><i class="fa-brands fa-discord"></i
-            ></a>
-          </div>
-        </div>
-        <div
-          class="sm:w-96 w-80 mt-16 rounded-full overflow-hidden shadow-[0_4px_8px_rgba(255,255,255,0.1),0_12px_24px_rgba(255,255,255,0.1)] bg-black transform hover:translate-y-[-4px] transition duration-300"
+      <!-- Main Content Wrapper -->
+      <main class="max-w-screen-xl mx-auto px-6 w-full flex-grow">
+        <!-- Home Section -->
+        <section
+          id="home"
+          class="min-h-screen flex flex-col-reverse md:flex-row items-center justify-center pt-20 gap-12"
         >
-          <img alt="image" src="./assets/image.webp" />
-        </div>
-      </div>
+          <div
+            class="flex-1 flex flex-col items-center md:items-start text-center md:text-left space-y-6 animate__animated animate__fadeInLeft"
+          >
+            <div>
+              <h2 class="text-red-500 font-bold text-xl mb-2">HELLO, I'M</h2>
+              <h1 class="text-6xl font-bold font-sans text-white leading-tight">
+                Bhaskar <span class="text-red-600">Melkani</span>
+              </h1>
+            </div>
+            <p class="text-2xl text-gray-300 font-light">
+              Student <span class="text-red-600 font-bold mx-2">|</span> Web
+              Developer
+            </p>
 
-      <!-- About -->
-      <div class="text-center my-8 w-full sm:mt-10">
-        <h2
-          id="about"
-          class="text-3xl font-bold text-white mb-6 hover:underline decoration-red-600 decoration-2 underline-offset-4 scroll-mt-48"
-        >
-          About
-        </h2>
-
-        <div class="flex flex-col sm:flex-row justify-between items-center">
-          <!--about text-->
-          <div class="mt-6 sm:w-1/2">
-            <h1 class="text-4xl text-left font-bold font-sans pl-3">
-              Hello, i'm
-              <span class="text-red-600 text-4xl text-left font-bold font-sans"
-                >Bhaskar Melkani</span
+            <!-- Social Links -->
+            <div class="flex space-x-6 mt-4">
+              <a
+                href="https://github.com/NOTBOOSTER"
+                target="_blank"
+                class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center text-xl hover:bg-black hover:text-white transition-all transform hover:-translate-y-1 shadow-lg border border-gray-700"
               >
-            </h1>
-            <p class="text-left font-bold pt-6 pl-3 text-xl">
-              I’m a passionate student currently diving deep into the world of
-              web development. I have a strong love for coding and a constant
-              drive to explore new technologies and methodologies. I’m always
-              eager to learn more and take on new challenges that help me grow
-              as a developer. Every project I work on is an opportunity to
-              innovate and expand my knowledge, and I’m excited about where this
-              path will take me.
+                <i class="fa-brands fa-github"></i>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/bhaskar-melkani/"
+                target="_blank"
+                class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center text-xl hover:bg-blue-600 hover:text-white transition-all transform hover:-translate-y-1 shadow-lg border border-gray-700"
+              >
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+              <a
+                href="https://discord.gg/9SGWpnx6st"
+                target="_blank"
+                class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center text-xl hover:bg-indigo-500 hover:text-white transition-all transform hover:-translate-y-1 shadow-lg border border-gray-700"
+              >
+                <i class="fa-brands fa-discord"></i>
+              </a>
+            </div>
+
+            <a
+              href="#projects"
+              class="mt-8 px-8 py-3 rounded-full bg-red-600 text-white font-bold hover:bg-red-700 transition-colors shadow-lg shadow-red-900/20"
+            >
+              View My Work
+            </a>
+          </div>
+
+          <div
+            class="flex-1 flex justify-center animate__animated animate__fadeInRight"
+          >
+            <div class="relative w-72 h-72 md:w-96 md:h-96">
+              <div
+                class="absolute inset-0 rounded-full border-4 border-red-600 opacity-20 animate-pulse"
+              ></div>
+              <div
+                class="absolute inset-4 rounded-full border-2 border-white opacity-10"
+              ></div>
+              <img
+                src="./assets/image.png"
+                alt="Bhaskar Melkani"
+                class="w-full h-full object-cover rounded-full shadow-2xl border-4 border-gray-900 hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+          </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 scroll-mt-24">
+          <div class="glass-panel rounded-3xl p-8 md:p-12">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+              <div class="md:w-1/3 text-center">
+                <!-- Vector Illustration Placeholder -->
+                <img
+                  class="mt-10 w-72 sm:mr-10 object-cover shadow-lg transform hover:scale-110 transition duration-300"
+                  src="./assets/about.png"
+                  alt="about"
+                />
+              </div>
+              <div class="md:w-2/3">
+                <h2
+                  class="text-3xl md:text-4xl font-bold mb-6 border-l-4 border-red-600 pl-4"
+                >
+                  About Me
+                </h2>
+                <p class="text-lg leading-relaxed text-gray-300 mb-6">
+                  I’m a passionate student currently diving deep into the world
+                  of web development. I have a strong love for coding and a
+                  constant drive to explore new technologies and methodologies.
+                </p>
+                <p class="text-lg leading-relaxed text-gray-300">
+                  I’m always eager to learn more and take on new challenges that
+                  help me grow as a developer. Every project I work on is an
+                  opportunity to innovate and expand my knowledge, and I’m
+                  excited about where this path will take me.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 scroll-mt-24">
+          <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold text-white mb-4">
+              Technical <span class="text-red-600">Skills</span>
+            </h2>
+            <p class="text-gray-400">The technologies I work with</p>
+          </div>
+
+          <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
+            <!-- Skills -->
+            <!-- icons from https://www.flaticon.com/ -->
+            <div
+              class="group bg-gray-900 hover:bg-gray-800 p-6 rounded-xl flex flex-col items-center justify-center transition-all duration-300 hover:-translate-y-2 border border-gray-800 hover:border-red-600/30"
+            >
+              <img
+                src="./assets/icons/html-icon.png"
+                alt="HTML"
+                class="h-10 w-10 mb-3"
+              />
+              <span class="font-bold">HTML5</span>
+            </div>
+            <div
+              class="group bg-gray-900 hover:bg-gray-800 p-6 rounded-xl flex flex-col items-center justify-center transition-all duration-300 hover:-translate-y-2 border border-gray-800 hover:border-red-600/30"
+            >
+              <img
+                src="./assets/icons/css-icon.png"
+                alt="CSS"
+                class="h-10 w-10 mb-3"
+              />
+              <span class="font-bold">CSS3</span>
+            </div>
+            <div
+              class="group bg-gray-900 hover:bg-gray-800 p-6 rounded-xl flex flex-col items-center justify-center transition-all duration-300 hover:-translate-y-2 border border-gray-800 hover:border-red-600/30"
+            >
+              <img
+                src="./assets/icons/js-icon.png"
+                alt="JavaScript"
+                class="h-10 w-10 mb-3"
+              />
+              <span class="font-bold">JavaScript</span>
+            </div>
+            <div
+              class="group bg-gray-900 hover:bg-gray-800 p-6 rounded-xl flex flex-col items-center justify-center transition-all duration-300 hover:-translate-y-2 border border-gray-800 hover:border-red-600/30"
+            >
+              <img
+                src="./assets/icons/node-icon.png"
+                alt="Node.js"
+                class="h-10 w-10 mb-3"
+              />
+              <span class="font-bold">Node.js</span>
+            </div>
+            <div
+              class="group bg-gray-900 hover:bg-gray-800 p-6 rounded-xl flex flex-col items-center justify-center transition-all duration-300 hover:-translate-y-2 border border-gray-800 hover:border-red-600/30"
+            >
+              <img
+                src="./assets/icons/react-icon.png"
+                alt="React"
+                class="h-10 w-10 mb-3"
+              />
+              <span class="font-bold">React</span>
+            </div>
+            <div
+              class="group bg-gray-900 hover:bg-gray-800 p-6 rounded-xl flex flex-col items-center justify-center transition-all duration-300 hover:-translate-y-2 border border-gray-800 hover:border-red-600/30"
+            >
+              <img
+                src="./assets/icons/tailwind-icon.png"
+                alt="Tailwind CSS"
+                class="w-10 mb-3"
+              />
+              <span class="font-bold">Tailwind</span>
+            </div>
+            <div
+              class="group bg-gray-900 hover:bg-gray-800 p-6 rounded-xl flex flex-col items-center justify-center transition-all duration-300 hover:-translate-y-2 border border-gray-800 hover:border-red-600/30"
+            >
+              <img
+                src="./assets/icons/typescript.png"
+                alt="TypeScript"
+                class="h-10 w-10 mb-3"
+              />
+              <span class="font-bold">TypeScript</span>
+            </div>
+            <div
+              class="group bg-gray-900 hover:bg-gray-800 p-6 rounded-xl flex flex-col items-center justify-center transition-all duration-300 hover:-translate-y-2 border border-gray-800 hover:border-red-600/30"
+            >
+              <img
+                src="./assets/icons/mysql.png"
+                alt="mysql"
+                class="h-10 w-10 mb-3"
+              />
+              <span class="font-bold">MySQL</span>
+            </div>
+            <div
+              class="group bg-gray-900 hover:bg-gray-800 p-6 rounded-xl flex flex-col items-center justify-center transition-all duration-300 hover:-translate-y-2 border border-gray-800 hover:border-red-600/30"
+            >
+              <img
+                src="./assets/icons/github-icon.png"
+                alt="GitHub"
+                class="h-10 w-10 mb-3"
+              />
+              <span class="font-bold">Git/GitHub</span>
+            </div>
+            <div
+              class="group bg-gray-900 hover:bg-gray-800 p-6 rounded-xl flex flex-col items-center justify-center transition-all duration-300 hover:-translate-y-2 border border-gray-800 hover:border-red-600/30"
+            >
+              <img
+                src="./assets/icons/nextjs-icon.png"
+                alt="NextJs"
+                class="h-10 w-10 mb-3"
+              />
+              <span class="font-bold">Next.js</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="py-20 scroll-mt-24">
+          <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold text-white mb-4">
+              Professional <span class="text-red-600">Experience</span>
+            </h2>
+            <p class="text-gray-400">My professional journey</p>
+          </div>
+
+          <div class="max-w-6xl mx-auto px-4">
+            <!-- Timeline Item -->
+            <div
+              class="glass-panel p-8 rounded-2xl relative border-l-4 border-red-600 ml-4 md:ml-0 transition-transform duration-300 hover:-translate-y-1"
+            >
+              <!-- Timeline Dot (Decorational) -->
+              <div
+                class="hidden md:block absolute -left-12 top-10 w-6 h-6 bg-red-600 rounded-full border-4 border-black"
+              ></div>
+
+              <div
+                class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4"
+              >
+                <div>
+                  <h3 class="text-2xl font-bold text-white">
+                    Web Developer Intern
+                  </h3>
+                  <h4 class="text-lg text-red-500 font-semibold mt-1">
+                    High Horse – Digital Marketing Agency
+                  </h4>
+                </div>
+                <div
+                  class="mt-2 md:mt-0 px-4 py-1 bg-gray-900 rounded-full text-sm text-gray-300 border border-gray-700 flex items-center"
+                >
+                  <i class="fa-regular fa-calendar mr-2"></i> Aug 2025 - Nov
+                  2025
+                </div>
+              </div>
+
+              <div class="text-gray-300 leading-relaxed mb-6">
+                <ul class="list-disc list-outside ml-5 space-y-2">
+                  <li>
+                    Worked as a Web Developer managing and developing web
+                    interfaces using HTML, CSS, JavaScript, React, Next.js, and
+                    Node.js.
+                  </li>
+                  <li>
+                    Implemented n8n automation workflows for internal processes.
+                  </li>
+                  <li>
+                    Worked with Shopify Liquid templates and Framer for
+                    interactive design.
+                  </li>
+                  <li>
+                    Integrated Three.js for interactive 3D experiences on
+                    websites.
+                  </li>
+                </ul>
+              </div>
+
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="px-3 py-1 bg-gray-900 rounded-full text-xs font-semibold text-cyan-400 border border-gray-700"
+                  >React</span
+                >
+                <span
+                  class="px-3 py-1 bg-gray-900 rounded-full text-xs font-semibold text-green-500 border border-gray-700"
+                  >Shopify</span
+                >
+                <span
+                  class="px-3 py-1 bg-gray-900 rounded-full text-xs font-semibold text-purple-400 border border-gray-700"
+                  >n8n</span
+                >
+                <span
+                  class="px-3 py-1 bg-gray-900 rounded-full text-xs font-semibold text-white border border-gray-700"
+                  >Three.js</span
+                >
+                <span
+                  class="px-3 py-1 bg-gray-900 rounded-full text-xs font-semibold text-pink-500 border border-gray-700"
+                  >Framer</span
+                >
+                <span
+                  class="px-3 py-1 bg-gray-900 rounded-full text-xs font-semibold text-gray-400 border border-gray-700"
+                  >Next.js</span
+                >
+                <span
+                  class="px-3 py-1 bg-gray-900 rounded-full text-xs font-semibold text-green-700 border border-gray-700"
+                  >Node.js</span
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 scroll-mt-24">
+          <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold text-white mb-4">
+              Featured <span class="text-red-600">Projects</span>
+            </h2>
+            <p class="text-gray-400">Some things I've built</p>
+          </div>
+
+          <div class="flex flex-col gap-16">
+            <!-- Project 1: Straynodes -->
+            <div
+              class="glass-panel p-6 rounded-2xl md:p-8 hover:bg-white/5 transition-colors"
+            >
+              <div class="flex flex-col md:flex-row gap-8 items-center">
+                <div
+                  class="w-full md:w-1/2 lg:w-2/5 flex-shrink-0 mb-4 md:mb-0"
+                >
+                  <img
+                    src="./assets/projects/straynodes.png"
+                    alt="Straynodes"
+                    class="w-full h-auto"
+                  />
+                </div>
+                <div
+                  class="w-full md:w-1/2 flex flex-col items-start text-left"
+                >
+                  <h3 class="text-3xl font-bold text-red-500 mb-3">
+                    Straynodes
+                  </h3>
+                  <p class="text-gray-300 mb-6 leading-relaxed">
+                    A advanced game server hosting platform with a admin panel
+                    built for performance and conversions.
+                  </p>
+                  <div class="flex flex-wrap gap-3 mb-6">
+                    <span
+                      class="px-3 py-1 bg-gray-800 rounded-full text-xs font-semibold text-gray-300 border border-gray-700"
+                      >Next.js</span
+                    >
+                    <span
+                      class="px-3 py-1 bg-gray-800 rounded-full text-xs font-semibold text-blue-400 border border-gray-700"
+                      >Tailwind</span
+                    >
+                    <span
+                      class="px-3 py-1 bg-gray-800 rounded-full text-xs font-semibold text-yellow-400 border border-gray-700"
+                      >MySQL</span
+                    >
+                  </div>
+                  <div class="flex gap-4">
+                    <a
+                      href="https://straynodes.xyz/"
+                      target="_blank"
+                      class="px-5 py-2 bg-red-600 rounded-lg font-bold hover:bg-red-700 transition-colors flex items-center gap-2"
+                    >
+                      <i class="fa-solid fa-up-right-from-square"></i> Live Demo
+                    </a>
+                    <span
+                      class="px-5 py-2 bg-gray-800 border border-gray-600 rounded-lg text-gray-400 cursor-not-allowed flex items-center gap-2"
+                    >
+                      <i class="fa-solid fa-lock"></i> Private Code
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 2: Pterodactyl Manager -->
+            <div
+              class="glass-panel p-6 rounded-2xl md:p-8 hover:bg-white/5 transition-colors"
+            >
+              <div class="flex flex-col md:flex-row-reverse gap-8 items-center">
+                <div
+                  class="w-full md:w-1/2 lg:w-2/5 flex-shrink-0 mb-4 md:mb-0"
+                >
+                  <img
+                    src="./assets/projects/pterodactylmenager.png"
+                    alt="pterodactylmenager"
+                    class="w-full h-auto"
+                  />
+                </div>
+                <div
+                  class="w-full md:w-1/2 flex flex-col items-start text-left"
+                >
+                  <h3 class="text-3xl font-bold text-red-500 mb-3">
+                    Pterodactyl Manager
+                  </h3>
+                  <p class="text-gray-300 mb-6 leading-relaxed">
+                    A web panel and Discord bot for server management,
+                    automating invoices, user server control, and suspension
+                    based on payments.
+                  </p>
+                  <div class="flex flex-wrap gap-3 mb-6">
+                    <span
+                      class="px-3 py-1 bg-gray-800 rounded-full text-xs font-semibold text-green-500 border border-gray-700"
+                      >Node.js</span
+                    >
+                    <span
+                      class="px-3 py-1 bg-gray-800 rounded-full text-xs font-semibold text-blue-400 border border-gray-700"
+                      >Tailwind</span
+                    >
+                    <span
+                      class="px-3 py-1 bg-gray-800 rounded-full text-xs font-semibold text-yellow-400 border border-gray-700"
+                      >MySQL</span
+                    >
+                  </div>
+                  <div class="flex gap-4">
+                    <span
+                      class="px-5 py-2 bg-gray-800 border border-gray-600 rounded-lg text-gray-400 cursor-not-allowed flex items-center gap-2"
+                    >
+                      <i class="fa-solid fa-ban"></i> Not Deployed
+                    </span>
+                    <a
+                      href="https://github.com/NOTBOOSTER/pterodactyl-admin"
+                      target="_blank"
+                      class="px-5 py-2 bg-gray-800 border border-gray-600 rounded-lg font-bold hover:bg-gray-700 transition-colors flex items-center gap-2"
+                    >
+                      <i class="fa-brands fa-github"></i> Code
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 3: My Meme -->
+            <div
+              class="glass-panel p-6 rounded-2xl md:p-8 hover:bg-white/5 transition-colors"
+            >
+              <div class="flex flex-col md:flex-row gap-8 items-center">
+                <div
+                  class="w-full md:w-1/2 lg:w-2/5 flex-shrink-0 mb-4 md:mb-0"
+                >
+                  <img
+                    src="./assets/projects/mymeme.png"
+                    alt="My Meme"
+                    class="w-full h-auto rounded-xl border-gray-400 border-2"
+                  />
+                </div>
+                <div
+                  class="w-full md:w-1/2 flex flex-col items-start text-left"
+                >
+                  <h3 class="text-3xl font-bold text-red-500 mb-3">My Meme</h3>
+                  <p class="text-gray-300 mb-6 leading-relaxed">
+                    A web app to generate, share, and discover AI-created memes
+                    with customizable prompts and social features.
+                  </p>
+                  <div class="flex flex-wrap gap-3 mb-6">
+                    <span
+                      class="px-3 py-1 bg-gray-800 rounded-full text-xs font-semibold text-cyan-400 border border-gray-700"
+                      >Next.js</span
+                    >
+                    <span
+                      class="px-3 py-1 bg-gray-800 rounded-full text-xs font-semibold text-blue-400 border border-gray-700"
+                      >Tailwind</span
+                    >
+                    <span
+                      class="px-3 py-1 bg-gray-800 rounded-full text-xs font-semibold text-yellow-400 border border-gray-700"
+                      >MySQL</span
+                    >
+                  </div>
+                  <div class="flex gap-4">
+                    <a
+                      href="https://my-meme-by-bhaskar.vercel.app/"
+                      target="_blank"
+                      class="px-5 py-2 bg-red-600 rounded-lg font-bold hover:bg-red-700 transition-colors flex items-center gap-2"
+                    >
+                      <i class="fa-solid fa-up-right-from-square"></i> Live Demo
+                    </a>
+                    <a
+                      href="https://github.com/NOTBOOSTER/My-Meme"
+                      target="_blank"
+                      class="px-5 py-2 bg-gray-800 border border-gray-600 rounded-lg font-bold hover:bg-gray-700 transition-colors flex items-center gap-2"
+                    >
+                      <i class="fa-brands fa-github"></i> Code
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 scroll-mt-24">
+          <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-12">
+              <h2 class="text-4xl font-bold text-white mb-4">
+                Get In <span class="text-red-600">Touch</span>
+              </h2>
+              <p class="text-gray-400">
+                Have a project in mind or just want to say hi?
+              </p>
+            </div>
+
+            <div class="glass-panel p-8 rounded-2xl">
+              <form id="contactForm" onsubmit="handleFormSubmit(event)">
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                  <div>
+                    <label
+                      for="name"
+                      class="block text-sm font-bold text-gray-400 mb-2"
+                      >Name</label
+                    >
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      required
+                      class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-red-600 focus:ring-1 focus:ring-red-600 transition-colors"
+                      placeholder="John Doe"
+                    />
+                  </div>
+                  <div>
+                    <label
+                      for="email"
+                      class="block text-sm font-bold text-gray-400 mb-2"
+                      >Email</label
+                    >
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      required
+                      class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-red-600 focus:ring-1 focus:ring-red-600 transition-colors"
+                      placeholder="john@example.com"
+                    />
+                  </div>
+                </div>
+                <div class="mb-6">
+                  <label
+                    for="message"
+                    class="block text-sm font-bold text-gray-400 mb-2"
+                    >Message</label
+                  >
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="4"
+                    required
+                    class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-red-600 focus:ring-1 focus:ring-red-600 transition-colors"
+                    placeholder="Your message here..."
+                  ></textarea>
+                </div>
+                <button
+                  type="submit"
+                  class="w-full bg-red-600 text-white font-bold py-3 rounded-lg hover:bg-red-700 transition-colors shadow-lg shadow-red-900/20"
+                >
+                  Send Message
+                </button>
+              </form>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Footer -->
+      <footer class="glass-nav mt-auto py-8">
+        <div
+          class="max-w-screen-xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500"
+        >
+          <div class="mb-4 md:mb-0 text-center md:text-left">
+            <p class="font-bold text-white text-lg">Bhaskar Melkani</p>
+            <a
+              href="mailto:bhanuphadi@gmail.com"
+              class="hover:text-red-500 transition-colors"
+              >bhanuphadi@gmail.com</a
+            >
+          </div>
+          <div class="flex flex-col items-center md:items-end">
+            <p class="mb-2">© 2025 All Rights Reserved</p>
+            <p>
+              Made by
+              <a
+                href="https://github.com/NOTBOOSTER"
+                class="text-red-500 hover:underline"
+                >NOTBOOSTER</a
+              >
             </p>
           </div>
-          <!--about pic-->
-          <img
-            class="mt-10 w-72 sm:mr-10 object-cover shadow-lg transform hover:scale-110 transition duration-300"
-            src="./assets/about.png"
-            alt="about"
-          />
         </div>
-      </div>
-
-      <!-- Skills -->
-      <!-- icons from https://www.flaticon.com/ -->
-
-      <div class="text-center my-8 w-full sm:mt-16 mt-12">
-        <h2
-          id="skills"
-          class="text-3xl font-bold text-white mb-6 hover:underline decoration-red-600 decoration-2 underline-offset-4 scroll-mt-48"
-        >
-          Skills
-        </h2>
-        <div class="flex flex-wrap justify-center gap-4 p-4">
-          <!-- Skill 1: HTML -->
-          <div
-            class="flex items-center justify-center p-4 bg-gray-800 hover:bg-gray-700 rounded-lg shadow-lg transition-all duration-300"
-          >
-            <img
-              src="./assets/icons/html-icon.png"
-              alt="HTML"
-              class="h-10 w-10"
-            />
-          </div>
-          <!-- Skill 2: CSS -->
-          <div
-            class="flex items-center justify-center p-4 bg-gray-800 hover:bg-gray-700 rounded-lg shadow-lg transition-all duration-300"
-          >
-            <img
-              src="./assets/icons/css-icon.png"
-              alt="CSS"
-              class="h-10 w-10"
-            />
-          </div>
-          <!-- Skill 3: JavaScript -->
-          <div
-            class="flex items-center justify-center p-4 bg-gray-800 hover:bg-gray-700 rounded-lg shadow-lg transition-all duration-300"
-          >
-            <img
-              src="./assets/icons/js-icon.png"
-              alt="JavaScript"
-              class="h-10 w-10"
-            />
-          </div>
-          <!-- Skill 4: Node.js -->
-          <div
-            class="flex items-center justify-center p-4 bg-gray-800 hover:bg-gray-700 rounded-lg shadow-lg transition-all duration-300"
-          >
-            <img
-              src="./assets/icons/node-icon.png"
-              alt="Node.js"
-              class="h-10 w-10"
-            />
-          </div>
-          <!-- Skill 5: React -->
-          <div
-            class="flex items-center justify-center p-4 bg-gray-800 hover:bg-gray-700 rounded-lg shadow-lg transition-all duration-300"
-          >
-            <img
-              src="./assets/icons/react-icon.png"
-              alt="React"
-              class="h-10 w-10"
-            />
-          </div>
-          <!-- Skill 6: Tailwind CSS -->
-          <div
-            class="flex items-center justify-center p-4 bg-gray-800 hover:bg-gray-700 rounded-lg shadow-lg transition-all duration-300"
-          >
-            <img
-              src="./assets/icons/tailwind-icon.png"
-              alt="Tailwind CSS"
-              class="w-10"
-            />
-          </div>
-          <!-- Skill 7: Type Script -->
-          <div
-            class="flex items-center justify-center p-4 bg-gray-800 hover:bg-gray-700 rounded-lg shadow-lg transition-all duration-300"
-          >
-            <img
-              src="./assets/icons/typescript.png"
-              alt="TypeScript"
-              class="h-10 w-10"
-            />
-          </div>
-          <!-- Skill 8: mysql -->
-          <div
-            class="flex items-center justify-center p-4 bg-gray-800 hover:bg-gray-700 rounded-lg shadow-lg transition-all duration-300"
-          >
-            <img
-              src="./assets/icons/mysql.png"
-              alt="mysql"
-              class="h-10 w-10"
-            />
-          </div>
-          <!-- Skill 8: GitHub -->
-          <div
-            class="flex items-center justify-center p-4 bg-gray-800 hover:bg-gray-700 rounded-lg shadow-lg transition-all duration-300"
-          >
-            <img
-              src="./assets/icons/github-icon.png"
-              alt="GitHub"
-              class="h-10 w-10"
-            />
-          </div>
-          <!-- Skill 9: NextJs -->
-          <div
-            class="flex items-center justify-center p-4 bg-gray-800 hover:bg-gray-700 rounded-lg shadow-lg transition-all duration-300"
-          >
-            <img
-              src="./assets/icons/nextjs-icon.png"
-              alt="NextJs"
-              class="h-10 w-10"
-            />
-          </div>
-        </div>
-      </div>
-
-      <!-- Projects -->
-      <div class="text-center w-full sm:mt-20 mt-12">
-        <h2
-          id="projects"
-          class="text-3xl font-bold text-white mb-6 hover:underline decoration-red-600 decoration-2 underline-offset-4 scroll-mt-48"
-        >
-          Projects
-        </h2>
-        <div class="flex flex-wrap justify-center gap-6 p-4">
-          <!-- Project 0: MyMeme app -->
-          <div
-            class="flex flex-col md:flex-row items-center bg-neutral-900 hover:bg-neutral-800 p-6 rounded-xl shadow-lg transition-all duration-300"
-          >
-            <div class="w-full md:w-1/2 lg:w-2/5 flex-shrink-0 mb-4 md:mb-0">
-              <img
-                src="./assets/projects/mymeme.png"
-                alt="My Meme"
-                class="w-full h-auto rounded-xl border-gray-400 border-2"
-              />
-            </div>
-
-            <!-- Project Details -->
-            <div
-              class="flex flex-col justify- items-center md:ml-8 lg:ml-12 w-full md:w-1/2 lg:w-3/5"
-            >
-              <h2
-                class="text-3xl lg:text-4xl text-red-600 font-bold hover:underline mb-2"
-              >
-                My Meme
-              </h2>
-              <p class="text-gray-300 mb-4 text-sm lg:text-base">
-                A web app to generate, share, and discover AI-created memes with customizable prompts and social features.
-              </p>
-
-              <!-- Technologies Used -->
-              <div class="flex items-center space-x-5 mb-4 p-5">
-                <img
-                  src="./assets/icons/nextjs-icon.png"
-                  alt="NextJs"
-                  class="h-10 w-10"
-                />
-                <img
-                  src="./assets/icons/tailwind-icon.png"
-                  alt="Tailwind"
-                  class="w-10"
-                />
-                <img
-                  src="./assets/icons/mysql.png"
-                  alt="mysql"
-                  class="h-10 w-10"
-                />
-              </div>
-              <div class="flex items-centerv space-x-4">
-                <a
-                  href="https://my-meme-by-bhaskar.vercel.app/"
-                  target="_blank"
-                  class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-500"
-                  >View Project</a
-                >
-                <a
-                  href="https://github.com/NOTBOOSTER/My-Meme"
-                  target="_blank"
-                  class="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700"
-                  >View Code</a
-                >
-              </div>
-            </div>
-          </div>
-          <!-- Project 1: Pterodactyl Manager -->
-          <div
-            class="flex flex-col md:flex-row items-center bg-neutral-900 hover:bg-neutral-800 p-6 rounded-xl shadow-lg transition-all duration-300"
-          >
-            <div class="w-full md:w-1/2 lg:w-2/5 flex-shrink-0 mb-4 md:mb-0">
-              <img
-                src="./assets/projects/pterodactylmenager.png"
-                alt="pterodactylmenager"
-                class="w-full h-auto rounded-xl border-gray-400 border-2"
-              />
-            </div>
-
-            <!-- Project Details -->
-            <div
-              class="flex flex-col justify- items-center md:ml-8 lg:ml-12 w-full md:w-1/2 lg:w-3/5"
-            >
-              <h2
-                class="text-3xl lg:text-4xl text-red-600 font-bold hover:underline mb-2"
-              >
-                Pterodactyl Manager
-              </h2>
-              <p class="text-gray-300 mb-4 text-sm lg:text-base">
-                This Pterodactyl system provides a web panel and Discord bot for server management, including admin invoice creation, user server control from Discord, and automated server suspension based on payments. It could also integrate UPI for payment processing.
-              </p>
-
-              <!-- Technologies Used -->
-              <div class="flex items-center space-x-5 mb-4 p-5">
-                <img
-                  src="./assets/icons/node-icon.png"
-                  alt="Node"
-                  class="h-10 w-10"
-                />
-                <img
-                  src="./assets/icons/tailwind-icon.png"
-                  alt="Tailwind"
-                  class="w-10"
-                />
-                <img
-                  src="./assets/icons/mysql.png"
-                  alt="MySQL"
-                  class="h-10 w-10"
-                />
-              </div>
-              <div class="flex items-centerv space-x-4">
-                <a
-                  class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-500"
-                  >Not Deployed</a
-                >
-                <a
-                  href="https://github.com/NOTBOOSTER/pterodactyl-admin"
-                  target="_blank"
-                  class="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700"
-                  >View Code</a
-                >
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 2: stray nodes-->
-          <div
-            class="flex flex-col md:flex-row items-center bg-neutral-900 hover:bg-neutral-800 p-6 rounded-xl shadow-lg transition-all duration-300"
-          >
-            <div class="w-full md:w-1/2 lg:w-2/5 flex-shrink-0 mb-4 md:mb-0">
-              <img
-                src="./assets/projects/straynodes.png"
-                alt="Straynodes"
-                class="w-full h-auto rounded-xl border-gray-400 border-2"
-              />
-            </div>
-
-            <!-- Project Details -->
-            <div
-              class="flex flex-col justify- items-center md:ml-8 lg:ml-12 w-full md:w-1/2 lg:w-3/5"
-            >
-              <h2
-                class="text-3xl lg:text-4xl text-red-600 font-bold hover:underline mb-2"
-              >
-                Straynodes
-              </h2>
-              <p class="text-gray-300 mb-4 text-sm lg:text-base">
-                This is a simple game server hosting platform landing page. The
-                Project was developed using React, Tailwind CSS, and JavaScript
-                for optimal performance.
-              </p>
-
-              <!-- Technologies Used -->
-              <div class="flex items-center space-x-5 mb-4 p-5">
-                <img
-                  src="./assets/icons/react-icon.png"
-                  alt="React"
-                  class="h-10 w-10"
-                />
-                <img
-                  src="./assets/icons/tailwind-icon.png"
-                  alt="Tailwind CSS"
-                  class="w-10"
-                />
-                <img
-                  src="./assets/icons/js-icon.png"
-                  alt="JavaScript"
-                  class="h-10 w-10"
-                />
-              </div>
-              <div class="flex items-centerv space-x-4">
-                <a
-                  href="https://straynodes.xyz/"
-                  target="_blank"
-                  class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-500"
-                  >View Project</a
-                >
-                <h1
-                  target="_blank"
-                  class="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700"
-                  >Code is private
-                </h1>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 3: Weather app -->
-          <div
-            class="flex flex-col md:flex-row items-center bg-neutral-900 hover:bg-neutral-800 p-6 rounded-xl shadow-lg transition-all duration-300"
-          >
-            <div class="w-full md:w-1/2 lg:w-2/5 flex-shrink-0 mb-4 md:mb-0">
-              <img
-                src="./assets/projects/weather-app.png"
-                alt="Weather App"
-                class="w-full h-auto rounded-xl border-gray-400 border-2"
-              />
-            </div>
-
-            <!-- Project Details -->
-            <div
-              class="flex flex-col justify- items-center md:ml-8 lg:ml-12 w-full md:w-1/2 lg:w-3/5"
-            >
-              <h2
-                class="text-3xl lg:text-4xl text-red-600 font-bold hover:underline mb-2"
-              >
-                Weather App
-              </h2>
-              <p class="text-gray-300 mb-4 text-sm lg:text-base">
-                This is a Weather Website project that provides weather information with 5 days forecast. The Project is buit in React js and Tailwind Css by using Openweather api.
-              </p>
-
-              <!-- Technologies Used -->
-              <div class="flex items-center space-x-5 mb-4 p-5">
-                <img
-                  src="./assets/icons/react-icon.png"
-                  alt="React"
-                  class="h-10 w-10"
-                />
-                <img
-                  src="./assets/icons/tailwind-icon.png"
-                  alt="Tailwind"
-                  class="w-10"
-                />
-                <img
-                  src="./assets/icons/js-icon.png"
-                  alt="JavaScript"
-                  class="h-10 w-10"
-                />
-              </div>
-              <div class="flex items-centerv space-x-4">
-                <a
-                  href="https://weather-app-by-bb.vercel.app/"
-                  target="_blank"
-                  class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-500"
-                  >View Project</a
-                >
-                <a
-                  href="https://github.com/NOTBOOSTER/weather-app"
-                  target="_blank"
-                  class="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700"
-                  >View Code</a
-                >
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 4: MyPortfolio -->
-          <div
-            class="flex flex-col md:flex-row items-center bg-neutral-900 hover:bg-neutral-800 p-6 rounded-xl shadow-lg transition-all duration-300"
-          >
-            <div class="w-full md:w-1/2 lg:w-2/5 flex-shrink-0 mb-4 md:mb-0">
-              <img
-                src="./assets/projects/portfolio.png"
-                alt="Portfolio"
-                class="w-full h-auto rounded-xl border-gray-400 border-2"
-              />
-            </div>
-
-            <!-- Project Details -->
-            <div
-              class="flex flex-col justify- items-center md:ml-8 lg:ml-12 w-full md:w-1/2 lg:w-3/5"
-            >
-              <h2
-                class="text-3xl lg:text-4xl text-red-600 font-bold hover:underline mb-2"
-              >
-                Portfolio
-              </h2>
-              <p class="text-gray-300 mb-4 text-sm lg:text-base">
-                This is a simple my portfolio project in Html, Tailwind Css, and
-                JavaScript for optimal performance and to improve My basic
-                knowledge.
-              </p>
-
-              <!-- Technologies Used -->
-              <div class="flex items-center space-x-5 mb-4 p-5">
-                <img
-                  src="./assets/icons/html-icon.png"
-                  alt="Html"
-                  class="h-10 w-10"
-                />
-                <img
-                  src="./assets/icons/tailwind-icon.png"
-                  alt="Tailwind CSS"
-                  class="w-10"
-                />
-                <img
-                  src="./assets/icons/js-icon.png"
-                  alt="JavaScript"
-                  class="h-10 w-10"
-                />
-              </div>
-              <div class="flex items-centerv space-x-4">
-                <a
-                  href="https://bhaskarmelkani.vercel.app"
-                  target="_blank"
-                  class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-500"
-                  >View Project</a
-                >
-                <a
-                  href="https://github.com/NOTBOOSTER/portfolio"
-                  target="_blank"
-                  class="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700"
-                  >View Code</a
-                >
-              </div>
-            </div>
-          </div>
-
-          <!--Projects end -->
-        </div>
-      </div>
-
-      <!-- Contact Section -->
-      <div
-        class="w-full flex justify-center items-center text-white flex-col mt-16 sm:mt-16"
-      >
-        <h2
-          id="contact"
-          class="text-3xl font-bold text-white mb-3 hover:underline decoration-red-600 decoration-2 underline-offset-4 scroll-mt-48"
-        >
-          Contact
-        </h2>
-        <form class="w-full max-w-lg p-6 rounded-lg shadow-lg">
-          <!-- Name Input -->
-          <div class="mb-4">
-            <label for="name" class="block text-sm font-medium text-gray-300"
-              >Name</label
-            >
-            <input
-              type="text"
-              id="name"
-              name="name"
-              required
-              class="w-full px-3 py-2 text-black bg-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-red-600"
-            />
-          </div>
-          <!-- Email Input -->
-          <div class="mb-4">
-            <label for="email" class="block text-sm font-medium text-gray-300"
-              >Email</label
-            >
-            <input
-              type="email"
-              id="email"
-              name="email"
-              required
-              class="w-full px-3 py-2 text-black bg-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-red-600"
-            />
-          </div>
-          <!-- Message Input -->
-          <div class="mb-6">
-            <label for="message" class="block text-sm font-medium text-gray-300"
-              >Message</label
-            >
-            <textarea
-              id="message"
-              name="message"
-              rows="4"
-              required
-              class="w-full px-3 py-2 text-black bg-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-red-600"
-            ></textarea>
-          </div>
-          <!-- Send Button -->
-          <div class="text-center">
-            <button
-              type="submit"
-              class="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-opacity-50 transition-all duration-300 font-bold"
-            >
-              Send
-            </button>
-          </div>
-        </form>
-      </div>
-
-      <!--End Page-->
-      <div class="w-full">
-        <div
-          class="flex justify-center flex-col items-center text-white text-center"
-        >
-          <div
-            class="flex justify-between items-center w-full sm:flex-row flex-col mb-8"
-          >
-            <a href="#home" class="flex-shrink-0">
-              <img src="./assets/logo.png" alt="Bhaskar Melkani" class="h-10" />
-            </a>
-            <div class="mt-8">
-              <h2 class="font-bold">DETAILS</h2>
-              <ul class="sm:text-start mt-4">
-                <li>Bhaskar Melkani</li>
-                <li>
-                  <a href="mailto:bhanuphadi@gmail.com">bhanuphadi@gmail.com</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <p class="text-sm mb-10">
-            © 2024 |
-            <a
-              href="https://github.com/NOTBOOSTER"
-              class="hover:underline text-blue-400"
-              >Bhaskar (NOTBOOSTER)</a
-            >
-            | All rights reserved.
-          </p>
-        </div>
-      </div>
-
-      <div class="w-full"></div>
-      <!--end-->
+      </footer>
     </div>
-    <!--Scripts-->
+
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="./js/Particles.js"></script>
     <script src="./js/script.js"></script>
